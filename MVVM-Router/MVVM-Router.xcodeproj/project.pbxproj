@@ -16,6 +16,10 @@
 		A07140CB25F0CFD800951F44 /* SecondViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140CA25F0CFD800951F44 /* SecondViewRouter.swift */; };
 		A07140CE25F0CFEA00951F44 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140CD25F0CFEA00951F44 /* SecondViewModel.swift */; };
 		A07140D125F0CFF800951F44 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140D025F0CFF800951F44 /* SecondViewController.swift */; };
+		A07140D625F0F55F00951F44 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140D525F0F55F00951F44 /* BaseRouter.swift */; };
+		A07140DC25F0F5BB00951F44 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140DB25F0F5BB00951F44 /* MainRouter.swift */; };
+		A07140E325F0F60C00951F44 /* FirstViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140E225F0F60C00951F44 /* FirstViewBuilder.swift */; };
+		A07140E725F0F61F00951F44 /* SecondViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07140E625F0F61F00951F44 /* SecondViewBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		A07140CA25F0CFD800951F44 /* SecondViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewRouter.swift; sourceTree = "<group>"; };
 		A07140CD25F0CFEA00951F44 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		A07140D025F0CFF800951F44 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A07140D525F0F55F00951F44 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		A07140DB25F0F5BB00951F44 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		A07140E225F0F60C00951F44 /* FirstViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewBuilder.swift; sourceTree = "<group>"; };
+		A07140E625F0F61F00951F44 /* SecondViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				A07140A025F0CE2200951F44 /* AppDelegate.swift */,
-				A07140B725F0CEAB00951F44 /* MainTabViewController */,
+				A07140DA25F0F57A00951F44 /* Base */,
+				A07140B725F0CEAB00951F44 /* MainTabBarController */,
 				A07140B825F0CEF000951F44 /* FirstViewController */,
 				A07140B925F0CF1A00951F44 /* SecondViewController */,
 				A07140A925F0CE2400951F44 /* Assets.xcassets */,
@@ -73,16 +82,18 @@
 			path = "MVVM-Router";
 			sourceTree = "<group>";
 		};
-		A07140B725F0CEAB00951F44 /* MainTabViewController */ = {
+		A07140B725F0CEAB00951F44 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				A07140DB25F0F5BB00951F44 /* MainRouter.swift */,
 			);
-			path = MainTabViewController;
+			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
 		A07140B825F0CEF000951F44 /* FirstViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A07140E025F0F5E200951F44 /* Builder */,
 				A07140BF25F0CF5E00951F44 /* Router */,
 				A07140BE25F0CF5800951F44 /* ViewModel */,
 				A07140BD25F0CF4E00951F44 /* View */,
@@ -93,6 +104,7 @@
 		A07140B925F0CF1A00951F44 /* SecondViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A07140E125F0F5F000951F44 /* Builder */,
 				A07140BC25F0CF4200951F44 /* Router */,
 				A07140BB25F0CF3B00951F44 /* ViewModel */,
 				A07140BA25F0CF3200951F44 /* View */,
@@ -146,6 +158,30 @@
 				A07140C025F0CF9600951F44 /* FirstViewRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		A07140DA25F0F57A00951F44 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A07140D525F0F55F00951F44 /* BaseRouter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A07140E025F0F5E200951F44 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				A07140E225F0F60C00951F44 /* FirstViewBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		A07140E125F0F5F000951F44 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				A07140E625F0F61F00951F44 /* SecondViewBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +255,15 @@
 			files = (
 				A07140D125F0CFF800951F44 /* SecondViewController.swift in Sources */,
 				A07140CE25F0CFEA00951F44 /* SecondViewModel.swift in Sources */,
+				A07140E725F0F61F00951F44 /* SecondViewBuilder.swift in Sources */,
 				A07140C825F0CFBC00951F44 /* FirstViewController.swift in Sources */,
 				A07140C125F0CF9600951F44 /* FirstViewRouter.swift in Sources */,
 				A07140A125F0CE2200951F44 /* AppDelegate.swift in Sources */,
 				A07140C525F0CFAA00951F44 /* FirstViewModel.swift in Sources */,
 				A07140CB25F0CFD800951F44 /* SecondViewRouter.swift in Sources */,
+				A07140E325F0F60C00951F44 /* FirstViewBuilder.swift in Sources */,
+				A07140D625F0F55F00951F44 /* BaseRouter.swift in Sources */,
+				A07140DC25F0F5BB00951F44 /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
