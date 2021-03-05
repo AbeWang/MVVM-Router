@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class FirstViewBuilder: BuilderProtocol {
+    static func build() -> FirstViewController {
+        let viewController = FirstViewController()
+        viewController.viewModel = FirstViewModel()
+        viewController.router = FirstViewRouter(context: viewController)
+        return viewController
+    }
+}

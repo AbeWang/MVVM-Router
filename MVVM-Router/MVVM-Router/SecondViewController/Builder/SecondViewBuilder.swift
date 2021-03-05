@@ -5,4 +5,11 @@
 //  Created by Abe Wang on 2021/3/4.
 //
 
-import Foundation
+import UIKit
+
+class SecondViewBuilder: BuilderProtocol {
+    static func build() -> SecondViewController {
+        let viewController = SecondViewController()
+        return viewController
+    }
+}
