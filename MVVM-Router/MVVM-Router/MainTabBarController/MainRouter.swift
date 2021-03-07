@@ -31,6 +31,7 @@ extension MainRouter {
     private func createTabBarItemNavigationController(withTitle title: String) -> UINavigationController {
         let naviController = UINavigationController()
         naviController.navigationBar.prefersLargeTitles = true
+        naviController.navigationItem.largeTitleDisplayMode = .always
         naviController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
         return naviController
     }

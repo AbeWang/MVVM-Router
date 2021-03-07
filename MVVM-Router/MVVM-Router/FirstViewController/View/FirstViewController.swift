@@ -17,25 +17,25 @@ class FirstViewController: UIViewController {
     var viewModel: FirstViewModel?
     var router: FirstViewRouter?
     
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.textColor = .black
-        label.backgroundColor = .clear
-        label.text = viewModel?.title
-        return label
-    }()
-    
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.spacing = 5
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 15
         return stackView
+    }()
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 30)
+        label.textAlignment = .center
+        label.textColor = .black
+        label.backgroundColor = .yellow
+        label.text = viewModel?.title
+        return label
     }()
     
     private lazy var increaseButton: UIButton = {
@@ -43,6 +43,7 @@ class FirstViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Update text", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         button.addTarget(self, action: #selector(increaseButtonPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
@@ -55,6 +56,7 @@ class FirstViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("View A", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         button.addTarget(self, action: #selector(buttonAPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
@@ -67,6 +69,7 @@ class FirstViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("View B", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         button.addTarget(self, action: #selector(buttonBPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
@@ -79,6 +82,7 @@ class FirstViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("View C", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         button.addTarget(self, action: #selector(buttonCPressed), for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.backgroundColor = UIColor.black.cgColor
@@ -94,6 +98,7 @@ class FirstViewController: UIViewController {
     }
 }
 
+// Private functions
 extension FirstViewController {
     private func handleDataBinding() {
         viewModel?.titleDidChangedCallback = { [weak self] title in
@@ -105,22 +110,19 @@ extension FirstViewController {
         title = "First View"
         view.backgroundColor = .white
         
+        buttonStackView.addArrangedSubview(label)
         buttonStackView.addArrangedSubview(increaseButton)
         buttonStackView.addArrangedSubview(button_A)
         buttonStackView.addArrangedSubview(button_B)
         buttonStackView.addArrangedSubview(button_C)
-        
-        view.addSubview(label)
         view.addSubview(buttonStackView)
         
-        let views: [String: Any] = [
-            "label": label,
-            "stack": buttonStackView
-        ]
-        
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[label]|", options: [], metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[stack]-15-|", options: [], metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-15-[label(30)]-10-[stack]-80-|", options: [], metrics: nil, views: views))
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: buttonStackView, attribute: .top, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: buttonStackView, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: buttonStackView, attribute: .left, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 15),
+            NSLayoutConstraint(item: buttonStackView, attribute: .right, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: -15)
+        ])
     }
 }
 
