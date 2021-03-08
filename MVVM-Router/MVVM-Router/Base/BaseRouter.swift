@@ -17,4 +17,8 @@ class BaseRouter<Destination, ViewModel> {
     func route(to destination: Destination, viewModel: ViewModel? = nil, parameters: [String: Any]? = nil) {
         assert(true, "Should be implemented by subclasses")
     }
+    
+    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+        context.dismiss(animated: animated, completion: completion)
+    }
 }
