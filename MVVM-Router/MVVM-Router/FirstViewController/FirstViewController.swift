@@ -137,7 +137,11 @@ extension FirstViewController {
     }
     
     @objc func buttonBPressed() {
-        router?.route(to: .viewB, viewModel: viewModel, parameters: viewModel?.parameters)
+        let parameters: [String: Any] = [
+            "name": "abewang",
+            "age": 18
+        ]
+        router?.route(to: .viewB, viewModel: viewModel, parameters: parameters)
     }
     
     @objc func buttonCPressed() {
