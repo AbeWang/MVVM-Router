@@ -7,6 +7,8 @@
 
 import UIKit
 
-class SecondViewRouter {
-    
+class SecondViewRouter: BaseRouter<SecondViewDestination, SecondViewModel> {
+    override func route(to destination: SecondViewDestination, viewModel: SecondViewModel? = nil, parameters: [String : Any]? = nil) {
+        
+    }
 }

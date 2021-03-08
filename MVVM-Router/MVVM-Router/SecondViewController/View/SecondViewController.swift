@@ -7,6 +7,18 @@
 
 import UIKit
 
+enum SecondViewDestination {
+    case sectionA
+    case sectionB
+}
+
 class SecondViewController: UIViewController {
+    var viewModel: SecondViewModel?
+    var router: SecondViewRouter?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+    }
 }
