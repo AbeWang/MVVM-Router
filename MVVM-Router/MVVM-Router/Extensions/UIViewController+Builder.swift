@@ -10,8 +10,13 @@ import UIKit
 extension UIViewController {
     static func build() -> UIViewController {
         let viewController = UIViewController()
-        viewController.title = "View"
         viewController.view.backgroundColor = .blue
+        return viewController
+    }
+    
+    static func build(title: String) -> UIViewController {
+        let viewController = UIViewController.build()
+        viewController.title = title
         return viewController
     }
 }

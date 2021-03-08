@@ -15,11 +15,3 @@ class FirstViewBuilder: BuilderProtocol {
         return viewController
     }
 }
-
-extension FirstViewBuilder {
-    static func build(backgroundColor: UIColor) -> FirstViewController {
-        let viewController = FirstViewBuilder.build()
-        viewController.view.backgroundColor = backgroundColor
-        return viewController
-    }
-}

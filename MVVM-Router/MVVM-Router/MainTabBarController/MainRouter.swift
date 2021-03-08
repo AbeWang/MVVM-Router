@@ -17,7 +17,7 @@ class MainRouter {
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([firstTabNaviController, secondTabNaviController], animated: false)
         
-        let firstVC = FirstViewBuilder.build(backgroundColor: .lightGray)
+        let firstVC = FirstViewBuilder.build()
         let secondVC = SecondViewBuilder.build()
         firstTabNaviController.pushViewController(firstVC, animated: false)
         secondTabNaviController.pushViewController(secondVC, animated: false)
