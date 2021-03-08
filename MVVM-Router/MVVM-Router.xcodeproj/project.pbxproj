@@ -98,10 +98,10 @@
 		A07140B825F0CEF000951F44 /* FirstViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A07140E025F0F5E200951F44 /* Builder */,
-				A07140BF25F0CF5E00951F44 /* Router */,
-				A07140BE25F0CF5800951F44 /* ViewModel */,
-				A07140BD25F0CF4E00951F44 /* View */,
+				A07140E225F0F60C00951F44 /* FirstViewBuilder.swift */,
+				A07140C025F0CF9600951F44 /* FirstViewRouter.swift */,
+				A07140C425F0CFAA00951F44 /* FirstViewModel.swift */,
+				A07140C725F0CFBC00951F44 /* FirstViewController.swift */,
 			);
 			path = FirstViewController;
 			sourceTree = "<group>";
@@ -109,60 +109,12 @@
 		A07140B925F0CF1A00951F44 /* SecondViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A07140E125F0F5F000951F44 /* Builder */,
-				A07140BC25F0CF4200951F44 /* Router */,
-				A07140BB25F0CF3B00951F44 /* ViewModel */,
-				A07140BA25F0CF3200951F44 /* View */,
-			);
-			path = SecondViewController;
-			sourceTree = "<group>";
-		};
-		A07140BA25F0CF3200951F44 /* View */ = {
-			isa = PBXGroup;
-			children = (
+				A07140E625F0F61F00951F44 /* SecondViewBuilder.swift */,
+				A07140CA25F0CFD800951F44 /* SecondViewRouter.swift */,
+				A07140CD25F0CFEA00951F44 /* SecondViewModel.swift */,
 				A07140D025F0CFF800951F44 /* SecondViewController.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A07140BB25F0CF3B00951F44 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A07140CD25F0CFEA00951F44 /* SecondViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A07140BC25F0CF4200951F44 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A07140CA25F0CFD800951F44 /* SecondViewRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A07140BD25F0CF4E00951F44 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A07140C725F0CFBC00951F44 /* FirstViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A07140BE25F0CF5800951F44 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A07140C425F0CFAA00951F44 /* FirstViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A07140BF25F0CF5E00951F44 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A07140C025F0CF9600951F44 /* FirstViewRouter.swift */,
-			);
-			path = Router;
+			path = SecondViewController;
 			sourceTree = "<group>";
 		};
 		A07140DA25F0F57A00951F44 /* Base */ = {
@@ -172,22 +124,6 @@
 				A07140EC25F2114200951F44 /* BuilderProtocol.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		A07140E025F0F5E200951F44 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				A07140E225F0F60C00951F44 /* FirstViewBuilder.swift */,
-			);
-			path = Builder;
-			sourceTree = "<group>";
-		};
-		A07140E125F0F5F000951F44 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				A07140E625F0F61F00951F44 /* SecondViewBuilder.swift */,
-			);
-			path = Builder;
 			sourceTree = "<group>";
 		};
 		A07140F325F2343A00951F44 /* Extensions */ = {
