@@ -107,7 +107,7 @@ extension FirstViewController {
     }
     
     private func setupUI() {
-        title = "First View"
+        title = "View"
         view.backgroundColor = .white
         
         buttonStackView.addArrangedSubview(label)

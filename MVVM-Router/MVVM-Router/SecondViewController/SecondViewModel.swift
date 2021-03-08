@@ -8,5 +8,13 @@
 import Foundation
 
 class SecondViewModel {
+    private(set) var sectionCount = 2
     
+    func textForSection(_ section: Int) -> String {
+        return section == 0 ? "A": "B"
+    }
+    
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        return section == 0 ? 3: 5
+    }
 }

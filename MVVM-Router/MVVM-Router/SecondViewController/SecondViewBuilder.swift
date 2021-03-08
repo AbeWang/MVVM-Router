@@ -14,4 +14,11 @@ class SecondViewBuilder: BuilderProtocol {
         viewController.router = SecondViewRouter(context: viewController)
         return viewController
     }
+    
+    static func build(_ style: UITableView.Style) -> SecondViewController {
+        let viewController = SecondViewController(style: style)
+        viewController.viewModel = SecondViewModel()
+        viewController.router = SecondViewRouter(context: viewController)
+        return viewController
+    }
 }
